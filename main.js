@@ -194,16 +194,16 @@ var dd = {
 		}
   },
   defaultStyle: {
-    font: 'Pridi'
+    font: 'Kanit'
   }
 }
 
 let fonts = {
-  Pridi: {
-    normal: 'Pridi-Regular.ttf',
-    bold: 'Pridi-Bold.ttf',
-    italics: 'Pridi-Light.ttf',
-    bolditalics: 'Pridi-ExtraLight.ttf'
+  Kanit: {
+    normal: 'Kanit-Regular.ttf',
+    bold: 'Kanit-Bold.ttf',
+    italics: 'Kanit-Light.ttf',
+    bolditalics: 'Kanit-ExtraLight.ttf'
 }
 }
 
