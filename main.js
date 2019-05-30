@@ -23,18 +23,26 @@ x.setAttribute("src","images/scn.png")
 var dataImg = getBase64Image(x)
 
 var dd = {
-  footer: {
-    columns: [
-      { 
-        margin:[50,0,0,0],
-        text: 'ผู้รับสินค้า: _____________'
-      },
-      { 
-        text: 'ผู้รับเงิน: ______________',
-        margin:[30,0,0,0],
-      }
-    ]
-  },
+  footer: [
+    {
+      columns: [
+        { 
+          margin:[50,-30,0,0],
+          text: 'ผู้รับสินค้า: _____________'
+        },
+        { 
+          text: 'ผู้รับเงิน: ______________',
+          margin:[50,-30,0,0],
+        }
+      ],
+    },
+    {
+      margin:[50,-1,0,20],
+      fontSize: "10",
+      width: 200,
+      text: "- หากสินค้าเสียหายหรือขาดจำนวนต้องแจ้งเป็นลายลักษณ์อักษรให้บริษัทฯทราบภายใน 7 วันนับจากวันที่ได้รับสินค้ามิฉะนั้นบริษัทฯจะถือว่าผู้ซื้อได้รับสินค้าถูกต้องเรียบร้อยแล้วตามที่ระบุไว้ในเอกสารนี้"
+    }
+  ],
 	content: [
     {
       columns: [
@@ -74,7 +82,7 @@ var dd = {
           decoration: 'underline'
         },
         {
-          text: "Invoice",
+          text: "บิลเงินสด",
           fontSize: 13,
           margin: [60,7,0,0],
           decoration: 'underline',
@@ -158,7 +166,7 @@ var dd = {
             margin: [5,0,7,3],
           },
           {
-            text: "ภาษี: 50 Baht",
+            text: "ภาษี: 50 บาท",
             alignment: 'right',
             fontSize: 11,
             bold: 'true',
@@ -166,7 +174,7 @@ var dd = {
             margin: [0,0,7,3],
           },
           {
-            text: "รวม: 2000 Baht",
+            text: "รวม: 2000 บาท",
             alignment: 'right',
             fontSize: 11,
             bold: 'true',
