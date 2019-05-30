@@ -50,9 +50,9 @@ var dd = {
         },
         [
             {
-              text: 'Sachanon Textile', 
+              text: 'ษาชานนท์ เทคซ์ไทลล์', 
               style: 'header',
-              margin: [10,0,0,0],
+              margin: [10,0,0,0]
             },
             {
               text: '43 moou 6 soi 70/4 Phrapradang Phrasamutjaedee Samutprakarn 10140', 
@@ -183,7 +183,7 @@ var dd = {
 	styles: {
 		header: {
 			fontSize: 14,
-			bold: true
+      bold: true,
 		},
 		subheader: {
 			fontSize: 10,
@@ -195,7 +195,19 @@ var dd = {
 		small: {
 			fontSize: 8
 		}
-	}
+  },
+  defaultStyle: {
+    font: 'Pridi'
+  }
 }
 
-createPdf(dd,null,pdfMake.fonts).open();
+let fonts = {
+  Pridi: {
+    normal: 'Pridi-Regular.ttf',
+    bold: 'Pridi-Bold.ttf',
+    italics: 'Pridi-Light.ttf',
+    bolditalics: 'Pridi-ExtraLight.ttf'
+}
+}
+
+createPdf(dd,null,fonts).open();
