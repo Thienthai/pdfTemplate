@@ -27,14 +27,11 @@ var dd = {
     columns: [
       { 
         margin:[50,0,0,0],
-        text: 'Buyers Sign: ______________'
+        text: 'ผู้รับสินค้า: _____________'
       },
       { 
-        text: 'Seller Sign: ______________',
+        text: 'ผู้รับเงิน: ______________',
         margin:[30,0,0,0],
-      },
-      {
-        text: 'Authorities Sign: ______________' 
       }
     ]
   },
@@ -55,12 +52,12 @@ var dd = {
               margin: [10,0,0,0]
             },
             {
-              text: '43 moou 6 soi 70/4 Phrapradang Phrasamutjaedee Samutprakarn 10140', 
+              text: '99/414 หมู่ที่ 8 ตำบลนาเกลือ อำเถอพระสมุทรเจดีย์ จังหวัดสมุทรปราการ 10290', 
               style: 'subheader',
               margin: [10,3,0,0],
             },
             {
-              text: 'Tel: 02-463-8653, 089-788-5439', 
+              text: 'Tel: 089-788-5439', 
               style: 'subheader',
               margin: [10,3,0,0],
             },
@@ -71,7 +68,7 @@ var dd = {
       columns: [
         {
           
-          text: "Tax Issue No: 3449671345",
+          text: "เลขที่ผู้เสียภาษี: 3449671345",
           margin: [0,10,0,0],
           fontSize: 11,
           decoration: 'underline'
@@ -91,7 +88,7 @@ var dd = {
             decoration: 'underline'
           },
           {
-            text: "Date: 01/05/2562",
+            text: "วันที่: 01/05/2562",
             margin: [60,3,0,0],
             fontSize: 10,
             decoration: 'underline'
@@ -102,7 +99,7 @@ var dd = {
     [
       {
         margin: [0,10,0,0],
-        text: "Name: Thienthai Chotchaicharin",
+        text: "ชื่อ-นามสกุล: เธียนไท โชติชัยชรินทร์",
         fontSize: 10,
         decoration: 'underline'
       },
@@ -110,7 +107,7 @@ var dd = {
         columns: [
           {
             margin: [0,2,0,0],
-            text: "Addess: 99/414 Place and Park Prachautid 90 Phrasamutjaedee Samutprakarn 10290",
+            text: "ที่อยู่: 321/1 ซอย พหลโยธิน 48 แขวงอนุเสาวรีย์ เขตบางเขน กรุงเทพมหานคร 10220",
             decoration: 'underline',
             fontSize: 10,
             width: 280 
@@ -125,11 +122,11 @@ var dd = {
 			    widths: [50, 160, 50, 50, 153],
 				body: [
             [
-              {text: 'No.', bold: 'true', style: 'tableHeader'}, 
-              {text: 'Products', bold: 'true', style: 'tableHeader'}, 
-              {text: 'Qantity', bold: 'true', style: 'tableHeader'}, 
-              {text: 'Price', bold: 'true', style: 'tableHeader'},
-              {text: 'Total Price', bold: 'true', style: 'tableHeader'}
+              {text: 'ลำดับ', bold: 'true', style: 'tableHeader'}, 
+              {text: 'รายการ', bold: 'true', style: 'tableHeader'}, 
+              {text: 'จำนวน', bold: 'true', style: 'tableHeader'}, 
+              {text: 'หน่วยละ', bold: 'true', style: 'tableHeader'},
+              {text: 'จำนวนเงิน', bold: 'true', style: 'tableHeader'}
             ],
 					[{text:'Sample value 1', fontSize:10}, {text:'Sample value 2', fontSize:10}, {text:'Sample value 3', fontSize:10},{text:'Sample value 4', fontSize:10},{text:'Sample value 5', fontSize:10}],
 					[{text:'Sample value 1', fontSize:10}, {text:'Sample value 2', fontSize:10}, {text:'Sample value 3', fontSize:10},{text:'Sample value 4', fontSize:10},{text:'Sample value 5', fontSize:10}],
@@ -148,12 +145,12 @@ var dd = {
       columns: [
         {
           margin: [0,5,0,0],
-          text: "Remark: This is my remark on this invoice slip",
+          text: "หมายเหตุ: This is my remark on this invoice slip",
           fontSize: 11
         },
         [
           {
-            text: "Discount: 3%",
+            text: "ส่วนลด: 3%",
             alignment: 'right',
             fontSize: 11,
             bold: 'true',
@@ -161,7 +158,7 @@ var dd = {
             margin: [5,0,7,3],
           },
           {
-            text: "Vat: 50 Baht",
+            text: "ภาษี: 50 Baht",
             alignment: 'right',
             fontSize: 11,
             bold: 'true',
@@ -169,7 +166,7 @@ var dd = {
             margin: [0,0,7,3],
           },
           {
-            text: "Total: 2000 Baht",
+            text: "รวม: 2000 Baht",
             alignment: 'right',
             fontSize: 11,
             bold: 'true',
