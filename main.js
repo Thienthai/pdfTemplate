@@ -22,6 +22,80 @@ var x = document.createElement("IMG");
 x.setAttribute("src","images/scn.png")
 var dataImg = getBase64Image(x)
 
+var listProd = [
+  {
+    product: "ผ้าเช็ดตัว",
+    quantity: 5,
+    price: 130
+  },
+  {
+    product: "ผ้าปูที่นอน",
+    quantity: 2,
+    price: 620
+  },
+  {
+    product: "ผ้าเช็ดเท้า",
+    quantity: 5,
+    price: 130
+  }
+]
+
+var discount = 3
+var vat = 50
+var total = 0
+
+var columnKeep = []
+var rowKeep = []
+var i,j;
+rowKeep.push([
+      {text: 'ลำดับ', bold: 'true', style: 'tableHeader',alignment: 'center'}, 
+      {text: 'รายการ', bold: 'true', style: 'tableHeader'}, 
+      {text: 'จำนวน', bold: 'true', style: 'tableHeader',alignment: 'center'}, 
+      {text: 'หน่วยละ', bold: 'true', style: 'tableHeader',alignment:'center'},
+      {text: 'จำนวนเงิน', bold: 'true', style: 'tableHeader',alignment: 'center'}
+])
+for(i = 0;i<listProd.length;i++){
+    for(j = 0;j<5;j++){
+        if(j == 0){
+          columnKeep.push({
+            text: i+1,
+            fontSize:10,
+            alignment:"center"
+          })
+        }else if(j == 1){
+          columnKeep.push({
+            text: listProd[i].product,
+            fontSize:10
+          })         
+        }else if(j == 2){
+          columnKeep.push({
+            text: listProd[i].quantity,
+            fontSize:10,
+            alignment:"center"
+          })  
+        }else if(j == 3){
+          columnKeep.push({
+            text: listProd[i].price + " บาท",
+            fontSize:10,
+            alignment:"center"
+          })
+          console.log(total)
+        }else if(j == 4){
+          columnKeep.push({
+            text: listProd[i].price * listProd[i].quantity + " บาท",
+            fontSize:10,
+            alignment: 'center'
+          })
+          total += listProd[i].price * listProd[i].quantity
+        }
+    }
+  rowKeep.push(columnKeep)
+  columnKeep = []
+}
+
+console.log(rowKeep)
+var totalPrice = total - vat - ((discount/100)*total)
+
 var dd = {
   footer: [
     {
@@ -128,20 +202,7 @@ var dd = {
 			style: 'tableExample',
 			table: {
 			    widths: [50, 160, 50, 50, 153],
-				body: [
-            [
-              {text: 'ลำดับ', bold: 'true', style: 'tableHeader'}, 
-              {text: 'รายการ', bold: 'true', style: 'tableHeader'}, 
-              {text: 'จำนวน', bold: 'true', style: 'tableHeader'}, 
-              {text: 'หน่วยละ', bold: 'true', style: 'tableHeader'},
-              {text: 'จำนวนเงิน', bold: 'true', style: 'tableHeader'}
-            ],
-					[{text:'Sample value 1', fontSize:10}, {text:'Sample value 2', fontSize:10}, {text:'Sample value 3', fontSize:10},{text:'Sample value 4', fontSize:10},{text:'Sample value 5', fontSize:10}],
-					[{text:'Sample value 1', fontSize:10}, {text:'Sample value 2', fontSize:10}, {text:'Sample value 3', fontSize:10},{text:'Sample value 4', fontSize:10},{text:'Sample value 5', fontSize:10}],
-					[{text:'Sample value 1', fontSize:10}, {text:'Sample value 2', fontSize:10}, {text:'Sample value 3', fontSize:10},{text:'Sample value 4', fontSize:10},{text:'Sample value 5', fontSize:10}],
-					[{text:'Sample value 1', fontSize:10}, {text:'Sample value 2', fontSize:10}, {text:'Sample value 3', fontSize:10},{text:'Sample value 4', fontSize:10},{text:'Sample value 5', fontSize:10}],
-					[{text:'Sample value 1', fontSize:10}, {text:'Sample value 2', fontSize:10}, {text:'Sample value 3', fontSize:10},{text:'Sample value 4', fontSize:10},{text:'Sample value 5', fontSize:10}]
-				]
+          body: rowKeep,
 			},
 			layout: {
 				fillColor: function (rowIndex, node, columnIndex) {
@@ -158,7 +219,7 @@ var dd = {
         },
         [
           {
-            text: "ส่วนลด: 3%",
+            text: "ส่วนลด: " + discount + "%",
             alignment: 'right',
             fontSize: 11,
             bold: 'true',
@@ -166,7 +227,7 @@ var dd = {
             margin: [5,0,7,3],
           },
           {
-            text: "ภาษี: 50 บาท",
+            text: "ภาษี: " + vat + " บาท",
             alignment: 'right',
             fontSize: 11,
             bold: 'true',
@@ -174,7 +235,7 @@ var dd = {
             margin: [0,0,7,3],
           },
           {
-            text: "รวม: 2000 บาท",
+            text: "รวม: " + totalPrice + "บาท",
             alignment: 'right',
             fontSize: 11,
             bold: 'true',
